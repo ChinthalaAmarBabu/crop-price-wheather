@@ -1,0 +1,190 @@
+.hero {
+  min-height: calc(100vh - 72px);
+  padding: 80px 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  box-sizing: border-box;
+
+  background:transparent;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+
+  color: #287047;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -3px;
+
+  color: #183c28;
+}
+
+.hero h3 {
+  max-width: 560px;
+
+  margin: 28px 0 36px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  color: #647169;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 13px 22px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  border: 1px solid #185c37;
+
+  background: #185c37;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: #12472b;
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  border: 1px solid #d4dfd6;
+
+  background: white;
+  color: #185c37;
+}
+
+.secondary-btn:hover {
+  background: #f0f6f1;
+}
+.hero-preview {
+  flex-shrink: 0;
+}
+/* Hero animations */
+
+.hero-content {
+  animation: heroContentIn 0.8s ease-out both;
+}
+
+.hero-preview {
+  animation: weatherCardIn 0.9s ease-out 0.15s both;
+}
+
+.weather-preview {
+  animation: weatherFloat 4s ease-in-out 1s infinite;
+}
+
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes weatherCardIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes weatherFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+/* Mobile Hero */
+
+@media (max-width: 650px) {
+
+  .hero {
+    min-height: auto;
+    padding: 70px 5% 60px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 45px;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+  }
+
+  .hero-preview {
+    width: 100%;
+  }
+
+  .weather-preview {
+    width: 100%;
+    max-width: 330px;
+  }
+
+}
+
